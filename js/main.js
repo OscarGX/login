@@ -57,14 +57,14 @@ salir.addEventListener('click', e => {
 //avento
 auth.onAuthStateChanged(user => {
     if (user) {
-
+        location.href = "bot.html"
         const userInfo = {
             email: user.email,
             token: user.refreshToken,
             uid: user.uid
         };
         sessionStorage.setItem('usuario', JSON.stringify(userInfo));
-        location.href = "bot.html"
+     
     } else {
         sessionStorage.removeItem('usuario');
     }
